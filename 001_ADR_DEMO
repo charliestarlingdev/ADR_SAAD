@@ -1,0 +1,45 @@
+# ADR-0003: Use PostgreSQL as Primary Database
+
+## Status
+Accepted
+
+## Date
+2026-01-07
+
+## Context
+The system requires relational data storage with strong consistency,
+support for multi-tenancy, and good performance at moderate scale.
+
+The team has prior SQL experience and limited time for onboarding.
+
+## Decision
+We will use PostgreSQL as the primary database for the application.
+
+## Alternatives Considered
+
+### MySQL
+- Pros: Widely used, good performance
+- Cons: Fewer advanced features for tenancy and extensions
+
+### MongoDB
+- Pros: Flexible schema
+- Cons: We require strong relational constraints and transactions
+
+## Consequences
+
+### Positive
+- Strong ACID guarantees
+- Mature ecosystem
+- Good support for migrations and tooling
+
+### Negative
+- Requires schema management
+- Less flexible than document databases
+
+## Rationale
+PostgreSQL best aligns with the data consistency requirements and the
+team’s existing experience, reducing risk and development time.
+
+## Related Decisions
+- ADR-0002: Multi-Tenant Architecture Strategy
+
